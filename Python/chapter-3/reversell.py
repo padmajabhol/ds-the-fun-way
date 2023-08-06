@@ -6,12 +6,18 @@ class Node():
 class SingleLinkedList():
 
     def __init__(self):
-        self.head = None
+        self.head: Node | None = None
 
-    def insert_beginning(self, data):
-        nb = Node(data)
-        nb.next = self.head
-        self.head = nb
+    def reverseLL(self):
+        new_list = None
+        current = self.head
+
+        while current:
+            next_node = current.next
+            current.next = new_list
+            new_list = current
+            current = next_node
+        self.head = new_list
 
     def display(self):
         if self.head is None:
@@ -33,12 +39,5 @@ n3 = Node(40)
 n2.next = n3
 n4 = Node(50)
 n3.next = n4
-
-L.insert_beginning(5)
-L.insert_beginning(2)
+L.reverseLL()
 L.display()
-
-
-
-
-

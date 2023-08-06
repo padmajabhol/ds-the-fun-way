@@ -10,6 +10,6 @@ def insertionSort(A):
         A[j+1] = current
         i = i + 1
 
-    return [0]
+    return A
 
-print(insertionSort([5,4,3,1,8]))
+print(insertionSort([2,0,2,1,1,0]))
