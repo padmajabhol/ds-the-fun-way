@@ -6,7 +6,8 @@ class Node:
 class Stack:
     def __init__(self):
         self.top = None
-
+    
+    #PUSH OPERATION
     def push(self, data):
         new = Node(data)
         #case-1 stack is empty
@@ -29,7 +30,7 @@ class Stack:
             print("Popped element is: ", self.top.data)
             print("------------------------")
             self.top = temp.next
-            temp = None
+            temp.next = None
 
     def display(self):
         if self.top is None:
@@ -54,5 +55,6 @@ if __name__ == "__main__":
     MyStack.display()
 
     MyStack.pop()
+    MyStack.display()
     MyStack.pop()
-
+    MyStack.display()
