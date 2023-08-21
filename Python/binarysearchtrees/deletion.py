@@ -32,15 +32,13 @@ class BSTN:
     def find_max(self):
         if self.right is None:
             return self.data
-        else:
-            self.right.find_max()
+        return self.right.find_max()
 
     
     def find_min(self):
         if self.left is None:
             return self.data
-        else:
-            self.left.find_min()
+        return self.left.find_min()
 
     def delete_node(self, val):
         if val < self.data:
@@ -50,13 +48,16 @@ class BSTN:
             if self.right:
                 self.right = self.right.delete_node(val)
         else:
+            # remove node by returning None if both left and right nodes are absent 
             if self.left is None and self.right is None:
                 return None
-            if self.right is None:
+            # remove node by returning left node if right node is absent
+            elif self.right is None:
                 return self.left
-            if self.left is None:
+            # remove node by returning right node if left node is absent
+            elif self.left is None:
                 return self.right
-
+            # if current node has both left and right node, look for min val in right node or max val in left node`
             min_val = self.right.find_min()
             #put min_val in current node
             self.data = min_val
@@ -71,5 +72,6 @@ def build_tree(elements):
     return root
 
 numbers_tree = build_tree([17, 4, 1, 20, 9, 23, 18, 34])
+print(numbers_tree.in_order_traversal())
 numbers_tree.delete_node(20)
 print(numbers_tree.in_order_traversal())
