@@ -63,7 +63,7 @@ class BSTN:
             self.data = min_val
             #delete min val
             self.right = self.right.delete_node(min_val)
-
+        # return modified tree
         return self
         
 def build_tree(elements):
