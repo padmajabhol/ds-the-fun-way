@@ -19,6 +19,19 @@ class DoublyLinkedList:
         temp.next = new_node
         new_node.prev = temp
 
+    def deleteAtTail(self):
+        if self.head is None:
+            return
+        if self.head.next is None:
+            self.head = None
+            return
+        prev = None
+        curr = self.head
+        while curr.next:
+            prev = curr
+            curr = curr.next
+        prev.next = None
+
     def display(self):
         temp = self.head
         while temp:
@@ -30,6 +43,7 @@ dll = DoublyLinkedList()
 dll.insertAtTail(1)
 dll.insertAtTail(2)
 dll.insertAtTail(3)
+dll.deleteAtTail()
 dll.display()
 
 
