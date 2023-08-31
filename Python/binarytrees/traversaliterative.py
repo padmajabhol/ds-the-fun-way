@@ -63,6 +63,22 @@ def post_order(root):
         result.append(stack2.pop().val)
     return result
 
+def levelorder(root):
+    if not root:
+        return None
+
+    queue = [root]
+    listprev = []
+    result = []
+    while queue:
+        node = queue.pop(0)
+        result.append(node.val)
+        if node.left:
+            queue.append(node.left)
+        if node.right:
+            queue.append(node.right)
+    return result
+        
 
 
 root = TreeNode(4)
@@ -76,3 +92,4 @@ root.right.right = TreeNode(7)
 print(pre_order(root))
 print(in_order(root))
 print(post_order(root))
+print(levelorder(root))
