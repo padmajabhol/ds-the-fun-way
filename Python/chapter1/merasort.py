@@ -12,4 +12,4 @@ def insertionSort(A):
 
     return A
 
-print(insertionSort([2,0,2,1,1,0]))
+print(insertionSort([2,1,3,4]))

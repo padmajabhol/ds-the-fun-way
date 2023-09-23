@@ -10,7 +10,8 @@ class Queue:
         if not self.s2:
             while self.s1:
                 self.s2.append(self.s1.pop())
-            return self.s2.pop() if self.s2 else None
+        return self.s2.pop() if self.s2 else None
+
 
     def peek(self):
         if not self.s2:
@@ -20,5 +21,20 @@ class Queue:
 
     def empty(self):
         return not self.s1 and not self.s2
+
+my_queue = Queue()
+
+# Enqueue elements
+my_queue.enqueue(1)
+my_queue.enqueue(2)
+my_queue.enqueue(3)
+
+print(my_queue.s1)
+
+# Dequeue elements
+print(my_queue.dequeue())
+print(my_queue.s1)
+print(my_queue.s2)
+print(my_queue.dequeue())
 
 

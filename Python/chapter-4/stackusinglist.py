@@ -10,3 +10,12 @@ class Stack:
 
     def pop(self):
         return self.items.pop()
+
+    def peek(self):
+        if not self.is_empty():
+            return self.items[-1]
+        else:
+            return None
+
+    def size(self):
+        return len(self.items)
